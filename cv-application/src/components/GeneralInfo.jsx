@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 
 export default function GeneralInfo() {
@@ -13,6 +13,11 @@ export default function GeneralInfo() {
             
         }
     )
+
+    useEffect(() => {
+      localStorage.setItem('GeneralInfo', JSON.stringify(formData));
+    }, [formData]);
+
     function handleChange(event) {
         console.log(event)
         const {name, value, type, checked} = event.target

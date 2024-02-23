@@ -9,6 +9,10 @@ export default function Experience() {
         }
     )
 
+    useEffect(() => {
+        localStorage.setItem('Experience', JSON.stringify(formData));
+      }, [formData]);
+
     function handleChange(event) {
         console.log(event)
         const {name, value, type, checked} = event.target
